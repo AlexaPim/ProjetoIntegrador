@@ -20,13 +20,13 @@ public class Tema {
 	@NotNull @NotBlank
 	@Size(min = 5,
 	max = 255, 
-	message = "esse campo não pode ter menos de '${validatedValue}' 5 caracteres")
+	message = "O nome deve conter de {min} a {max} caracteres.")
 	private String nome;
 	
 	@NotNull @NotBlank
 	@Size(min = 5, 
 	max = 1024, 
-	message = "esse campo não pode ter menos de '${validatedValue}' 5 caracteres")
+	message = "A descricao deve conter de {min} a {max} caracteres.")
 	private String descricao;
 	
 	@NotNull
