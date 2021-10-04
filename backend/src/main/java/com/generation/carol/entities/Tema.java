@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -16,12 +17,16 @@ public class Tema {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotNull
-	@Size(min = 5, max = 255)
+	@NotNull @NotBlank
+	@Size(min = 5,
+	max = 255, 
+	message = "esse campo não pode ter menos de '${validatedValue}' 5 caracteres")
 	private String nome;
 	
-	@NotNull
-	@Size(min = 5, max = 1024)
+	@NotNull @NotBlank
+	@Size(min = 5, 
+	max = 1024, 
+	message = "esse campo não pode ter menos de '${validatedValue}' 5 caracteres")
 	private String descricao;
 	
 	@NotNull
