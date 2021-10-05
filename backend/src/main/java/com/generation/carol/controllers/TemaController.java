@@ -20,45 +20,46 @@ import org.springframework.web.bind.annotation.RestController;
 import com.generation.carol.entities.Tema;
 import com.generation.carol.repositories.TemaRepository;
 
-
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/tema")
 public class TemaController {
-	
+
 	@Autowired
 	private TemaRepository repository;
-	
+
 	@GetMapping
-	public ResponseEntity<List<Tema>> GetAll(){
+	public ResponseEntity<List<Tema>> GetAll() {
 		return ResponseEntity.ok(repository.findAll());
 	}
-	
+
 	@GetMapping("/{id}")
-	public ResponseEntity<Tema> getById(@PathVariable long id){
-		return repository.findById(id).map(resp -> ResponseEntity.ok(resp))
-				.orElse(ResponseEntity.notFound().build());
+	public ResponseEntity<Tema> getById(@PathVariable long id) {
+		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
-	
+
 	@GetMapping("/nome/{nome}")
+<<<<<<< HEAD
 	public ResponseEntity<List<Tema>> getByNome(@PathVariable String nome){
+=======
+	public ResponseEntity<List<Tema>> getByName(@PathVariable String nome) {
+>>>>>>> development
 		return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));
 	}
-	
+
 	@PostMapping
-	public ResponseEntity<Tema> post(@Valid @RequestBody Tema tema){
+	public ResponseEntity<Tema> post(@Valid @RequestBody Tema tema) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(tema));
 	}
-	
+
 	@PutMapping
-	public ResponseEntity<Tema> put(@RequestBody Tema tema){
+	public ResponseEntity<Tema> put(@RequestBody Tema tema) {
 		return ResponseEntity.ok(repository.save(tema));
 	}
-	
+
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable long id) {
 		repository.deleteById(id);
 	}
-	
 
 }

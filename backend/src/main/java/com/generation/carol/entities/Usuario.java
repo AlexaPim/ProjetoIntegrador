@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,20 +24,27 @@ public class Usuario {
 	private Long id;
 
 	@NotNull
-	@Size(min = 5, max = 255)
+	@Size(min = 5, max = 255, message = "O nome deve conter de {min} a {max} caracteres.")
 	private String nome;
 
 	@NotNull
-	@Size(min = 5, max = 255)
+	@Size(min = 5, max = 255, message = "O e-mail deve conter de {min} a {max} caracteres.")
 	private String email;
 
 	@NotNull
-	@Size(min = 5, max = 255)
+	@Size(min = 5, max = 255, message = "A senha deve conter de {min} a {max} caracteres.")
 	private String senha;
 
+<<<<<<< HEAD
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
+=======
+	@OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//	@JsonIgnore
+//	@JsonIgnoreProperties("usuario")
+	private List<Postagem> postagens;
+>>>>>>> development
 
 	public Long getId() {
 		return id;

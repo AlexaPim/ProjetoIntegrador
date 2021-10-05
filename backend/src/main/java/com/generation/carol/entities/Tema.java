@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,7 +31,11 @@ public class Tema {
 
 	@NotNull
 	@NotBlank
+<<<<<<< HEAD
 	@Size(min = 5, max = 1024, message = "A descricao deve conter de {min} a {max} caracteres.")
+=======
+	@Size(min = 5, max = 1024, message = "A descrição deve conter de {min} a {max} caracteres.")
+>>>>>>> development
 	private String descricao;
 
 	@NotNull
@@ -39,9 +44,19 @@ public class Tema {
 	@NotNull
 	private int relevante;
 
+<<<<<<< HEAD
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("tema")
     private List<Postagem> postagem;
+=======
+	@OneToMany(mappedBy = "tema", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//	@JsonIgnore
+//	@JsonIgnoreProperties("tema")
+	private List<Postagem> postagens;
+
+	public Tema() {
+	}
+>>>>>>> development
 
 	public Long getId() {
 		return id;
@@ -83,6 +98,7 @@ public class Tema {
 		this.relevante = relevante;
 	}
 
+<<<<<<< HEAD
 	public List<Postagem> getPostagem() {
 		return postagem;
 	}
@@ -91,4 +107,13 @@ public class Tema {
 		this.postagem = postagem;
 	}
 
+=======
+	public List<Postagem> getPostagens() {
+		return postagens;
+	}
+
+	public void setPostagens(List<Postagem> postagens) {
+		this.postagens = postagens;
+	}
+>>>>>>> development
 }
