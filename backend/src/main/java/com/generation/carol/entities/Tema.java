@@ -23,30 +23,28 @@ public class Tema {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@NotNull @NotBlank
-	@Size(min = 5,
-	max = 255, 
-	message = "O nome deve conter de {min} a {max} caracteres.")
+
+	@NotNull
+	@NotBlank
+	@Size(min = 5, max = 255, message = "O nome deve conter de {min} a {max} caracteres.")
 	private String nome;
-	
-	@NotNull @NotBlank
-	@Size(min = 5, 
-	max = 1024, 
-	message = "A descricao deve conter de {min} a {max} caracteres.")
+
+	@NotNull
+	@NotBlank
+	@Size(min = 5, max = 1024, message = "A descrição deve conter de {min} a {max} caracteres.")
 	private String descricao;
-	
+
 	@NotNull
 	private int qntd_post;
-	
+
 	@NotNull
 	private int relevante;
-	
+
 	@OneToMany(mappedBy = "tema", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 //	@JsonIgnore
 //	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagens;
-	
+
 	public Tema() {
 	}
 

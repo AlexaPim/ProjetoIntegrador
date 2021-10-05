@@ -28,11 +28,11 @@ public class Postagem {
 	private Long id;
 	
 	@NotNull
-	@Size(min = 5, max = 255)
-	private String title;
+	@Size(min = 5, max = 255, message = "O titulo deve conter de {min} a {max} caracteres.")
+	private String titulo;
 	
 	@NotNull
-	@Size(min = 5, max = 2048)
+	@Size(min = 5, max = 2048, message = "O texto deve conter de {min} a {max} caracteres.")
 	private String texto;
 	
 	@Temporal(TemporalType.TIMESTAMP)
@@ -44,10 +44,11 @@ public class Postagem {
 	@NotNull
 	private int compartilhamentos;
 	
-//	@ManyToOne(fetch = FetchType.LAZY)
-//	@JoinColumn(name = "fk_id_usuario")
-//	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY) 
-//	private Usuario usuario;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "fk_id_usuario")
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+//	@JsonIgnoreProperties("postagens")
+	private Usuario usuario;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "fk_id_tema")
@@ -63,12 +64,12 @@ public class Postagem {
 		this.id = id;
 	}
 
-	public String getTitle() {
-		return title;
+	public String gettitulo() {
+		return titulo;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void settitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 	public String getTexto() {
