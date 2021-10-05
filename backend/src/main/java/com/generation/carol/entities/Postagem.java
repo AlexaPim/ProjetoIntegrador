@@ -6,14 +6,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_postagem")
@@ -25,7 +25,7 @@ public class Postagem {
 	
 	@NotNull
 	@Size(min = 5, max = 255)
-	private String title;
+	private String titulo;
 	
 	@NotNull
 	@Size(min = 5, max = 2048)
@@ -41,11 +41,11 @@ public class Postagem {
 	private int compartilhamentos;
 	
 	@ManyToOne
-	@JoinColumn(name = "fk_id_usuario")
+	@JsonIgnoreProperties("postagem")
 	private Usuario usuario;
 	
-	@OneToOne
-	@JoinColumn(name = "fk_id_tema")
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
 	private Tema tema;
 
 	public Long getId() {
@@ -56,12 +56,12 @@ public class Postagem {
 		this.id = id;
 	}
 
-	public String getTitle() {
-		return title;
+	public String gettitulo() {
+		return titulo;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void settitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 	public String getTexto() {

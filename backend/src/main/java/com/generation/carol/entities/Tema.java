@@ -1,13 +1,19 @@
 package com.generation.carol.entities;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_tema")
@@ -16,24 +22,26 @@ public class Tema {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@NotNull @NotBlank
-	@Size(min = 5,
-	max = 255, 
-	message = "O nome deve conter de {min} a {max} caracteres.")
+
+	@NotNull
+	@NotBlank
+	@Size(min = 5, max = 255, message = "O nome deve conter de {min} a {max} caracteres.")
 	private String nome;
-	
-	@NotNull @NotBlank
-	@Size(min = 5, 
-	max = 1024, 
-	message = "A descricao deve conter de {min} a {max} caracteres.")
+
+	@NotNull
+	@NotBlank
+	@Size(min = 5, max = 1024, message = "A descricao deve conter de {min} a {max} caracteres.")
 	private String descricao;
-	
+
 	@NotNull
 	private int qntd_post;
-	
+
 	@NotNull
 	private int relevante;
+
+	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("tema")
+    private List<Postagem> postagem;
 
 	public Long getId() {
 		return id;
@@ -74,4 +82,13 @@ public class Tema {
 	public void setRelevante(int relevante) {
 		this.relevante = relevante;
 	}
+
+	public List<Postagem> getPostagem() {
+		return postagem;
+	}
+
+	public void setPostagem(List<Postagem> postagem) {
+		this.postagem = postagem;
+	}
+
 }
