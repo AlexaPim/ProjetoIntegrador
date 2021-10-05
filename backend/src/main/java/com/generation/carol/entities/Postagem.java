@@ -3,17 +3,21 @@ package com.generation.carol.entities;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name = "tb_postagem")
@@ -40,12 +44,15 @@ public class Postagem {
 	@NotNull
 	private int compartilhamentos;
 	
-	@ManyToOne
-	@JoinColumn(name = "fk_id_usuario")
-	private Usuario usuario;
+//	@ManyToOne(fetch = FetchType.LAZY)
+//	@JoinColumn(name = "fk_id_usuario")
+//	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY) 
+//	private Usuario usuario;
 	
-	@OneToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "fk_id_tema")
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+//	@JsonIgnoreProperties("postagens")
 	private Tema tema;
 
 	public Long getId() {
@@ -96,13 +103,13 @@ public class Postagem {
 		this.compartilhamentos = compartilhamentos;
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
+//	public Usuario getUsuario() {
+//		return usuario;
+//	}
+//
+//	public void setUsuario(Usuario usuario) {
+//		this.usuario = usuario;
+//	}
 
 	public Tema getTema() {
 		return tema;
