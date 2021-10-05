@@ -14,8 +14,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 @Entity
 @Table(name = "tb_tema")
 public class Tema {
@@ -31,11 +29,8 @@ public class Tema {
 
 	@NotNull
 	@NotBlank
-<<<<<<< HEAD
-	@Size(min = 5, max = 1024, message = "A descricao deve conter de {min} a {max} caracteres.")
-=======
+
 	@Size(min = 5, max = 1024, message = "A descrição deve conter de {min} a {max} caracteres.")
->>>>>>> development
 	private String descricao;
 
 	@NotNull
@@ -44,19 +39,10 @@ public class Tema {
 	@NotNull
 	private int relevante;
 
-<<<<<<< HEAD
-	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("tema")
-    private List<Postagem> postagem;
-=======
 	@OneToMany(mappedBy = "tema", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 //	@JsonIgnore
 //	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagens;
-
-	public Tema() {
-	}
->>>>>>> development
 
 	public Long getId() {
 		return id;
@@ -98,16 +84,6 @@ public class Tema {
 		this.relevante = relevante;
 	}
 
-<<<<<<< HEAD
-	public List<Postagem> getPostagem() {
-		return postagem;
-	}
-
-	public void setPostagem(List<Postagem> postagem) {
-		this.postagem = postagem;
-	}
-
-=======
 	public List<Postagem> getPostagens() {
 		return postagens;
 	}
@@ -115,5 +91,5 @@ public class Tema {
 	public void setPostagens(List<Postagem> postagens) {
 		this.postagens = postagens;
 	}
->>>>>>> development
+
 }

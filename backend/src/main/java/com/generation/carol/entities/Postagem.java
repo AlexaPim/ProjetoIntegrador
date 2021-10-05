@@ -7,6 +7,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -14,62 +15,44 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-<<<<<<< HEAD
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-=======
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
->>>>>>> development
 
 @Entity
 @Table(name = "tb_postagem")
 public class Postagem {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@NotNull
-<<<<<<< HEAD
-	@Size(min = 5, max = 255)
-=======
 	@Size(min = 5, max = 255, message = "O titulo deve conter de {min} a {max} caracteres.")
->>>>>>> development
 	private String titulo;
-	
+
 	@NotNull
 	@Size(min = 5, max = 2048, message = "O texto deve conter de {min} a {max} caracteres.")
 	private String texto;
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date = new java.sql.Date(System.currentTimeMillis());
-	
+
 	@NotNull
 	private int curtidas;
-	
+
 	@NotNull
 	private int compartilhamentos;
-	
-<<<<<<< HEAD
-	@ManyToOne
-	@JsonIgnoreProperties("postagem")
-	private Usuario usuario;
-	
-	@ManyToOne
-	@JsonIgnoreProperties("postagem")
-=======
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "fk_id_usuario")
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 //	@JsonIgnoreProperties("postagens")
 	private Usuario usuario;
-	
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "fk_id_tema")
 	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 //	@JsonIgnoreProperties("postagens")
->>>>>>> development
+
 	private Tema tema;
 
 	public Long getId() {

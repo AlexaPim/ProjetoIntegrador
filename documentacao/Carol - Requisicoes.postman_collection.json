@@ -1,329 +1,188 @@
 {
-	"id": "1b763b8f-ab2f-4cf6-6e9b-4a2d34f10235",
-	"name": "Carol - Requisicoes",
-	"description": "Testes da task 5 do projeto integrador",
-	"order": [
-		"1c945212-a4f6-0a30-9a66-73a972db0c02",
-		"abcb9d4d-3a11-a031-060f-339ccb26b676",
-		"2f07750d-b282-46dd-8d7f-7c50b2ae223e",
-		"c8d53a19-a7d9-593e-85d4-87565a8521ae",
-		"804d3630-dc91-7873-9a99-14fbd952927e",
-		"ff25ed2c-62c2-2fcc-95d4-b6a76f3d44b6",
-		"5092dc13-050e-60cd-5dd0-7dc72edb1070",
-		"dec06644-8767-9254-d188-4ecede1c5c09",
-		"2644923f-2423-7b6b-7630-2b787eae0c33",
-		"bede7bbd-23a3-0d55-2c7a-b6a7d47edf6d",
-		"266e7b2b-38dc-a3f0-13ab-65f1507e95b1",
-		"e513ed75-6099-21f6-d238-729f7981894b"
-	],
-	"folders": [],
-	"folders_order": [],
-	"timestamp": 0,
-	"owner": "17088827",
-	"public": false,
-	"requests": [
+	"variables": [],
+	"info": {
+		"name": "Carol - Requisicoes",
+		"_postman_id": "1b763b8f-ab2f-4cf6-6e9b-4a2d34f10235",
+		"description": "Testes da task 5 do projeto integrador",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
 		{
-			"id": "1c945212-a4f6-0a30-9a66-73a972db0c02",
 			"name": "getAllTemas",
-			"description": "",
-			"collectionId": "1b763b8f-ab2f-4cf6-6e9b-4a2d34f10235",
-			"method": "GET",
-			"headers": "",
-			"data": [],
-			"rawModeData": "",
-			"url": "localhost:8080/tema",
-			"responses": [],
-			"pathVariableData": [],
-			"queryParams": [],
-			"headerData": [],
-			"collection_id": "1b763b8f-ab2f-4cf6-6e9b-4a2d34f10235"
+			"request": {
+				"url": "http://localhost:8080/tema",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
 		},
 		{
-			"id": "2644923f-2423-7b6b-7630-2b787eae0c33",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost:8080/postagem/titulo/{titulo}",
-			"queryParams": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "GET",
-			"collectionId": "1b763b8f-ab2f-4cf6-6e9b-4a2d34f10235",
-			"data": null,
-			"dataMode": "params",
-			"name": "getByTituloPostagem",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1633462252131,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {}
-		},
-		{
-			"id": "266e7b2b-38dc-a3f0-13ab-65f1507e95b1",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:8080/postagem/",
-			"queryParams": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "PUT",
-			"collectionId": "1b763b8f-ab2f-4cf6-6e9b-4a2d34f10235",
-			"data": [],
-			"dataMode": "raw",
-			"name": "updatePostagem",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1633461918444,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"rawModeData": "{\n\t\"id\": \"1\",\n\t\"titulo\":\"Amo panquequinhas\",\n\t\"texto\":\"diliça\",\n\t\"curtidas\": \"40\",\n\t\"compartilhamentos\": \"20\",\n\t\"tema\": {\n\t\t\"id\": 1\n\t}\n}"
-		},
-		{
-			"id": "2f07750d-b282-46dd-8d7f-7c50b2ae223e",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost:8080/tema/nome/{nome}",
-			"queryParams": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "GET",
-			"collectionId": "1b763b8f-ab2f-4cf6-6e9b-4a2d34f10235",
-			"data": null,
-			"dataMode": "params",
-			"name": "getByNomeTema",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1633462202476,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {}
-		},
-		{
-			"id": "5092dc13-050e-60cd-5dd0-7dc72edb1070",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:8080/postagem",
-			"queryParams": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "GET",
-			"collectionId": "1b763b8f-ab2f-4cf6-6e9b-4a2d34f10235",
-			"data": [],
-			"dataMode": "raw",
-			"name": "getAllByPostagens",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1633461283748,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"rawModeData": "{\n\t\"titulo\":\"Amo panquecaaaaa\",\n\t\"texto\":\"uahsasaasasas\",\n\t\"curtidas\": \"40\",\n\t\"compartilhamentos\": \"20\",\n\t\"tema\": {\n\t\t\"id\": 1\n\t}\n}"
-		},
-		{
-			"id": "804d3630-dc91-7873-9a99-14fbd952927e",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "localhost:8080/tema",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "PUT",
-			"data": [],
-			"dataMode": "raw",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1633462047876,
-			"name": "updateTema",
-			"description": "",
-			"collectionId": "1b763b8f-ab2f-4cf6-6e9b-4a2d34f10235",
-			"responses": [],
-			"rawModeData": "{\n\t\"id\":\"1\",\t\n\t\"nome\": \"Empregabilidade\",\n\t\"descricao\":\"Divulgacao de vagas\",\n\t\"qntd_post\":\"0\",\n\t\"relevante\":\"0\"\n\t\n}"
-		},
-		{
-			"id": "abcb9d4d-3a11-a031-060f-339ccb26b676",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost:8080/tema/1",
-			"queryParams": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "GET",
-			"collectionId": "1b763b8f-ab2f-4cf6-6e9b-4a2d34f10235",
-			"data": null,
-			"dataMode": "params",
 			"name": "getTemaById",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1633461726348,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {}
+			"request": {
+				"url": "http://localhost:8080/tema/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
 		},
 		{
-			"id": "bede7bbd-23a3-0d55-2c7a-b6a7d47edf6d",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:8080/postagem/",
-			"queryParams": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "POST",
-			"collectionId": "1b763b8f-ab2f-4cf6-6e9b-4a2d34f10235",
-			"data": [],
-			"dataMode": "raw",
-			"name": "postPostagem",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1633461818660,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"rawModeData": "{\n\t\"titulo\":\"Amo panquequinhas\",\n\t\"texto\":\"uahsasaasasas\",\n\t\"curtidas\": \"40\",\n\t\"compartilhamentos\": \"20\",\n\t\"tema\": {\n\t\t\"id\": 2\n\t}\n}"
+			"name": "getByNomeTema",
+			"request": {
+				"url": "http://localhost:8080/tema/nome/{nome}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
 		},
 		{
-			"id": "c8d53a19-a7d9-593e-85d4-87565a8521ae",
-			"headers": "Content-Type: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "localhost:8080/tema",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [],
-			"dataMode": "raw",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1633461548835,
 			"name": "postTema",
-			"description": "",
-			"collectionId": "1b763b8f-ab2f-4cf6-6e9b-4a2d34f10235",
-			"responses": [],
-			"rawModeData": "{\n\t\n \"nome\": \"Informações\",\n \"descricao\":\"Divulgacao de vagas\",\n \"qntd_post\":\"0\",\n \"relevante\":\"0\"\n\t\n}"
+			"request": {
+				"url": "http://localhost:8080/tema",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n \"nome\": \"Informações\",\n \"descricao\":\"Divulgacao de vagas\",\n \"qntd_post\":\"0\",\n \"relevante\":\"0\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
 		},
 		{
-			"id": "dec06644-8767-9254-d188-4ecede1c5c09",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost:8080/postagem/1",
-			"queryParams": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "GET",
-			"collectionId": "1b763b8f-ab2f-4cf6-6e9b-4a2d34f10235",
-			"data": null,
-			"dataMode": "params",
-			"name": "getPostagemById",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1633461635155,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {}
+			"name": "updateTema",
+			"request": {
+				"url": "http://localhost:8080/tema",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":\"1\",\t\n\t\"nome\": \"Empregabilidade\",\n\t\"descricao\":\"Divulgacao de vagas\",\n\t\"qntd_post\":\"0\",\n\t\"relevante\":\"0\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
 		},
 		{
-			"id": "e513ed75-6099-21f6-d238-729f7981894b",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost:8080/postagem/1",
-			"queryParams": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "DELETE",
-			"collectionId": "1b763b8f-ab2f-4cf6-6e9b-4a2d34f10235",
-			"data": null,
-			"dataMode": "params",
-			"name": "deletePostagem",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1633461994387,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {}
-		},
-		{
-			"id": "ff25ed2c-62c2-2fcc-95d4-b6a76f3d44b6",
-			"headers": "",
-			"headerData": [],
-			"url": "localhost:8080/tema/1",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "DELETE",
-			"data": [],
-			"dataMode": "params",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1633462033599,
 			"name": "deleteTema",
-			"description": "",
-			"collectionId": "1b763b8f-ab2f-4cf6-6e9b-4a2d34f10235",
-			"responses": []
+			"request": {
+				"url": "http://localhost:8080/tema/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getAllPostagens",
+			"request": {
+				"url": "http://localhost:8080/postagem",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"titulo\":\"Amo panquecaaaaa\",\n\t\"texto\":\"uahsasaasasas\",\n\t\"curtidas\": \"40\",\n\t\"compartilhamentos\": \"20\",\n\t\"tema\": {\n\t\t\"id\": 1\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getPostagemById",
+			"request": {
+				"url": "http://localhost:8080/postagem/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getByTituloPostagem",
+			"request": {
+				"url": "http://localhost:8080/postagem/titulo/{titulo}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "postPostagem",
+			"request": {
+				"url": "http://localhost:8080/postagem/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"titulo\":\"Amo panquequinhas\",\n\t\"texto\":\"uahsasaasasas\",\n\t\"curtidas\": \"40\",\n\t\"compartilhamentos\": \"20\",\n\t\"tema\": {\n\t\t\"id\": 2\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "updatePostagem",
+			"request": {
+				"url": "http://localhost:8080/postagem/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"1\",\n\t\"titulo\":\"Amo panquequinhas\",\n\t\"texto\":\"diliça\",\n\t\"curtidas\": \"40\",\n\t\"compartilhamentos\": \"20\",\n\t\"tema\": {\n\t\t\"id\": 1\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "deletePostagem",
+			"request": {
+				"url": "http://localhost:8080/postagem/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }

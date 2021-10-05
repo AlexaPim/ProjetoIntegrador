@@ -13,8 +13,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 @Entity
 @Table(name = "tb_usuario")
 public class Usuario {
@@ -35,16 +33,10 @@ public class Usuario {
 	@Size(min = 5, max = 255, message = "A senha deve conter de {min} a {max} caracteres.")
 	private String senha;
 
-<<<<<<< HEAD
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("usuario")
-	private List<Postagem> postagem;
-=======
 	@OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 //	@JsonIgnore
 //	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagens;
->>>>>>> development
 
 	public Long getId() {
 		return id;
@@ -78,12 +70,12 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public List<Postagem> getPostagem() {
-		return postagem;
+	public List<Postagem> getPostagens() {
+		return postagens;
 	}
 
-	public void setPostagem(List<Postagem> postagem) {
-		this.postagem = postagem;
+	public void setPostagens(List<Postagem> postagens) {
+		this.postagens = postagens;
 	}
 
 }
