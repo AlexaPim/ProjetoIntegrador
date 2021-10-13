@@ -1,7 +1,7 @@
 {
 	"variables": [],
 	"info": {
-		"name": "Carol - Requisicoes - POSTAGEM",
+		"name": "CAROL - Requisicoes - postagem",
 		"_postman_id": "2c848e8e-92b2-8f31-0699-06259e839a2d",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
@@ -90,7 +90,7 @@
 			"response": []
 		},
 		{
-			"name": "6 - Deletar postagem",
+			"name": "6 - Deletar postagem por ID",
 			"request": {
 				"url": "http://localhost:8080/postagem/{id}",
 				"method": "DELETE",

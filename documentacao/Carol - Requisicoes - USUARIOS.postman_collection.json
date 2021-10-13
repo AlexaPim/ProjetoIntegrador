@@ -1,7 +1,7 @@
 {
 	"variables": [],
 	"info": {
-		"name": "Carol - Requisicoes - USUARIOS",
+		"name": "CAROL - Requisicoes - usuarios",
 		"_postman_id": "c4371560-9b66-cb68-53d2-50806c9baa24",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
@@ -21,7 +21,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\n\t\"nome\": \"\",\n\t\"email\": \"\",\n\t\"senha\": \"\"\n\t\n}"
+					"raw": "{\n\t\"nome\": \"\",\n\t\"email\": \"\",\n\t\"senha\": \"\"\n}"
 				},
 				"description": ""
 			},
@@ -41,7 +41,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"usuario\": \"\",\n\t\"senha\": \"\"\n\t\n}"
+					"raw": "{\n\t\"email\": \"\",\n\t\"senha\": \"\"\n}"
 				},
 				"description": ""
 			},

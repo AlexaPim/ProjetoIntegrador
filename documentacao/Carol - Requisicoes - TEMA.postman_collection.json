@@ -1,7 +1,7 @@
 {
 	"variables": [],
 	"info": {
-		"name": "Carol - Requisicoes - TEMA",
+		"name": "CAROL - Requisicoes - tema",
 		"_postman_id": "2936fe10-7550-3384-470d-2040321b32dd",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
@@ -54,7 +54,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\n \"nome\": \"\",\n \"descricao\":\"\",\n \"qntd_post\":\"0\",\n \"relevante\":\"0\"\n\t\n}"
+					"raw": "{\n\t\n \"nome\": \"\",\n \"descricao\":\"\",\n \"qntd_post\":\"\",\n \"relevante\":\"\"\n\t\n}"
 				},
 				"description": ""
 			},
@@ -81,7 +81,7 @@
 			"response": []
 		},
 		{
-			"name": "6 - Deletar tema",
+			"name": "6 - Deletar tema por ID",
 			"request": {
 				"url": "http://localhost:8080/tema/{id}",
 				"method": "DELETE",
