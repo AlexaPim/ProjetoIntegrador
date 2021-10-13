@@ -62,11 +62,11 @@ public class Usuario {
 		this.email = email;
 	}
 
-	public String getSenhas() {
+	public String getSenha() {
 		return senha;
 	}
 
-	public void setSenhas(String senha) {
+	public void setSenha(String senha) {
 		this.senha = senha;
 	}
 
