@@ -16,8 +16,8 @@ import com.generation.carol.entities.UsuarioLogin;
 import com.generation.carol.service.UsuarioService;
 
 @RestController
-@RequestMapping("/usuarios")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
+@RequestMapping("/usuarios")
 public class UsuarioController {
 
 	@Autowired

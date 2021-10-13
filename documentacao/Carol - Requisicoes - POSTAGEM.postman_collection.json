@@ -1,0 +1,104 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Carol - Requisicoes - POSTAGEM",
+		"_postman_id": "2c848e8e-92b2-8f31-0699-06259e839a2d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1 - Consultar todas as postagens",
+			"request": {
+				"url": "http://localhost:8080/postagem",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"titulo\":\"Amo panquecaaaaa\",\n\t\"texto\":\"uahsasaasasas\",\n\t\"curtidas\": \"40\",\n\t\"compartilhamentos\": \"20\",\n\t\"tema\": {\n\t\t\"id\": 1\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "2 - Consultar postagem por ID",
+			"request": {
+				"url": "http://localhost:8080/postagem/{id}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "3 - Consultar postagem por título",
+			"request": {
+				"url": "http://localhost:8080/postagem/titulo/{titulo}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "4 - Cadastrar postagem",
+			"request": {
+				"url": "http://localhost:8080/postagem/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"titulo\":\"\",\n\t\"texto\":\"\",\n\t\"curtidas\": \"\",\n\t\"compartilhamentos\": \"\",\n\t\"tema\": {\n\t\t\"id\": \"\"\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "5 - Editar postagem",
+			"request": {
+				"url": "http://localhost:8080/postagem/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"\",\n\t\"titulo\":\"\",\n\t\"texto\":\"\",\n\t\"curtidas\": \"\",\n\t\"compartilhamentos\": \"\",\n\t\"tema\": {\n\t\t\"id\": \"\"\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "6 - Deletar postagem",
+			"request": {
+				"url": "http://localhost:8080/postagem/{id}",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
