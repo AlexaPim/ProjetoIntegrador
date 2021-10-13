@@ -3,7 +3,6 @@ package com.generation.carol.entities;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,7 +14,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_postagem")
@@ -42,17 +41,14 @@ public class Postagem {
 	@NotNull
 	private int compartilhamentos;
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne
 	@JoinColumn(name = "fk_id_usuario")
-	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-//	@JsonIgnoreProperties("postagens")
+	@JsonIgnoreProperties("postagens")
 	private Usuario usuario;
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne
 	@JoinColumn(name = "fk_id_tema")
-	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-//	@JsonIgnoreProperties("postagens")
-
+	@JsonIgnoreProperties("postagens")
 	private Tema tema;
 
 	public Long getId() {
@@ -63,11 +59,11 @@ public class Postagem {
 		this.id = id;
 	}
 
-	public String gettitulo() {
+	public String getTitulo() {
 		return titulo;
 	}
 
-	public void settitulo(String titulo) {
+	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
 
@@ -103,13 +99,13 @@ public class Postagem {
 		this.compartilhamentos = compartilhamentos;
 	}
 
-//	public Usuario getUsuario() {
-//		return usuario;
-//	}
-//
-//	public void setUsuario(Usuario usuario) {
-//		this.usuario = usuario;
-//	}
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 
 	public Tema getTema() {
 		return tema;
