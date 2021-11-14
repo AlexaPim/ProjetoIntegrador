@@ -3,6 +3,8 @@ package com.generation.carol.controllers;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,18 +41,18 @@ public class UsuarioController {
 	}
 
 	@PostMapping("/logar")
-	public ResponseEntity<UsuarioLogin> Autentication(@RequestBody Optional<UsuarioLogin> user) {
+	public ResponseEntity<UsuarioLogin> Autentication(@Valid @RequestBody Optional<UsuarioLogin> user) {
 		return usuarioService.Logar(user).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
 
 	@PostMapping("/cadastrar")
-	public ResponseEntity<Usuario> Post(@RequestBody Usuario usuario) {
+	public ResponseEntity<Usuario> Post(@Valid @RequestBody Usuario usuario) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.cadastrarUsuario(usuario));
 	}
 
 	@PutMapping("/atualizar")
-	public ResponseEntity<Usuario> putUsuario(@RequestBody Usuario usuario) {
+	public ResponseEntity<Usuario> putUsuario(@Valid @RequestBody Usuario usuario) {
 
 		return usuarioService.atualizarUsuario(usuario).map(resp -> ResponseEntity.status(HttpStatus.OK).body(resp))
 				.orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).build());
